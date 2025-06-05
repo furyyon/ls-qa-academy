@@ -1,12 +1,9 @@
 package ru.ls.qa.school.addressbook;
 
 public class GroupData {
-  public
-  final String name;
-  public
-  final String header;
-  public
-  final String footer;
+  public final String name;
+  public final String header;
+  public final String footer;
 
   public GroupData(String name, String header, String footer) {
     this.name = name;

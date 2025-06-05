@@ -1,14 +1,11 @@
 package ru.ls.qa.school.addressbook;
 
-public class NewContactData {
-  public
-  final String firstname;
-  public
-  final String middlename;
-  public
-  final String lastname ;
+public class ContactData {
+  public final String firstname;
+  public final String middlename;
+  public final String lastname ;
 
-  public NewContactData(String firstname, String middlename, String lastname) {
+  public ContactData(String firstname, String middlename, String lastname) {
     this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
