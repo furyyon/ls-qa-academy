@@ -27,7 +27,7 @@ public class GroupCreationTests {
   public void groupCreationTest() {
     goToGroupPage();
     initGroupCreation();
-    fillGroupForm("test1", "test2", "test3");
+    fillGroupForm(new GroupData("test1", "test2", "test3"));
     submitGroupCreation();
     returnToGroupPage();
   }
@@ -40,13 +40,13 @@ public class GroupCreationTests {
     $(By.name("submit")).click();
   }
 
-  private void fillGroupForm(String name, String header, String footer) {
+  private void fillGroupForm(GroupData groupData) {
     $(By.name("group_name")).click();
-    $(By.name("group_name")).sendKeys(name);
+    $(By.name("group_name")).sendKeys(groupData.getName());
     $(By.name("group_header")).click();
-    $(By.name("group_header")).sendKeys(header);
+    $(By.name("group_header")).sendKeys(groupData.getHeader());
     $(By.name("group_footer")).click();
-    $(By.name("group_footer")).sendKeys(footer);
+    $(By.name("group_footer")).sendKeys(groupData.getName());
   }
 
   private void initGroupCreation() {

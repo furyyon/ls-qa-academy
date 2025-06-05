@@ -22,7 +22,7 @@ public class NewContactCreationTest {
   @Test
   public void newContactCreation() {
     createNewContact();
-    addPersonalData("Ivan", "Ivanov", "Ivanovich");
+    addPersonalData(new NewContactData("Ivan", "Ivanov", "Ivanovich"));
     addNickname("Iva");
     addWorkCompany("LigaStavok");
     addResidentialAddress("dom pushkina ");
@@ -48,13 +48,13 @@ public class NewContactCreationTest {
     $(By.name("nickname")).sendKeys(nickname);
   }
 
-  private void addPersonalData(String firstname, String middlename, String lastname) {
+  private void addPersonalData(NewContactData newContactData) {
     $(By.name("firstname")).click();
-    $(By.name("firstname")).sendKeys(firstname);
+    $(By.name("firstname")).sendKeys(newContactData.getMiddlename());
     $(By.name("middlename")).click();
-    $(By.name("middlename")).sendKeys(middlename);
+    $(By.name("middlename")).sendKeys(newContactData.getMiddlename());
     $(By.name("lastname")).click();
-    $(By.name("lastname")).sendKeys(lastname);
+    $(By.name("lastname")).sendKeys(newContactData.getMiddlename());
   }
 
   private void createNewContact() {
