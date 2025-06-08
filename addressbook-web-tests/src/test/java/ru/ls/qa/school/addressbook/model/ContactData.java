@@ -1,4 +1,4 @@
-package ru.ls.qa.school.addressbook;
+package ru.ls.qa.school.addressbook.model;
 
 public class ContactData {
   public final String firstname;
