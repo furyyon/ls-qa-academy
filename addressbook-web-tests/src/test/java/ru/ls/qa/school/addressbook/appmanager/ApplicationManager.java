@@ -9,22 +9,17 @@ import static com.codeborne.selenide.Selenide.open;
 public class ApplicationManager {
   private final GroupHelper groupHelper = new GroupHelper();
   private final NavigetionHelper navigetionHelper = new NavigetionHelper();
-  private final SessionHelper sessionHelper = new SessionHelper();
+  public final SessionHelper sessionHelper = new SessionHelper();
+  private final String baseURL = "http://localhost:8080/addressbook/";
+  private final String browserSize = "1920x1080";
 
   public void init() {
-    open("http://localhost:8080/addressbook/");
-    Configuration.browserSize = "1920x1080";
+    open(baseURL);
+    Configuration.browserSize =browserSize;
     sessionHelper.login("admin", "secret");
   }
 
-  public void stop() {
-    logoutSite();
-  }
-
-  public void logoutSite() {
-    $(By.linkText("Logout"))
-            .click();
-  }
+  public SessionHelper getSessionHelper(){return sessionHelper;}
 
   public GroupHelper getGroupHelper() {
     return groupHelper;

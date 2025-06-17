@@ -4,8 +4,14 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class NavigetionHelper extends HelperBase {
+public class NavigetionHelper {
+  private final HelperBase helperBase = new HelperBase();
+
   public void goToGroupPage() {
-    click(By.linkText("groups"));
+    helperBase.click(By.linkText("groups"));
+  }
+
+  public HelperBase getHelperBase() {
+    return helperBase;
   }
 }

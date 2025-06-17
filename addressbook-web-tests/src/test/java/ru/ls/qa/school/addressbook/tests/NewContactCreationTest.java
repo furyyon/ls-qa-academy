@@ -4,15 +4,20 @@ import org.junit.jupiter.api.Test;
 import ru.ls.qa.school.addressbook.model.ContactData;
 
 public class NewContactCreationTest extends TestBase {
+  private String firstName = "Ivan";
+  private String lastName = "Ivanov";
+  private String middleName = "Ivanovich";
+  private String nickname = "Iva";
+  private String company = "LigaStavok";
+  private String address = "dom pushkina";
 
   @Test
   public void newContactCreation() {
     app.getGroupHelper().createNewContact();
-    app.getGroupHelper().addPersonalData(new ContactData("Ivan", "Ivanov", "Ivanovich"));
-    app.getGroupHelper().addNickname("Iva");
-    app.getGroupHelper().addWorkCompany("LigaStavok");
-    app.getGroupHelper().addResidentialAddress("dom pushkina ");
+    app.getGroupHelper().getContactHelper().addPersonalData(new ContactData(firstName, lastName, middleName));
+    app.getGroupHelper().addNickname(nickname);
+    app.getGroupHelper().addWorkCompany(company);
+    app.getGroupHelper().addResidentialAddress(address);
     app.getGroupHelper().saveData();
   }
-
 }
