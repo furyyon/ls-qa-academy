@@ -10,7 +10,7 @@ public class NewContactCreationTest extends TestBase {
                                                       "Ivanovich",
                                                       "Iva",
                                                       "LigaStavok",
-                                                      "dom pushkina"); //TODO Убери лишнее, оставь минимум полей
+                                                      "dom pushkina");
 
   @Test
   public void newContactCreation() {

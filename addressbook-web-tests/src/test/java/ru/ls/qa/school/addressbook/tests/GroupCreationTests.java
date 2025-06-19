@@ -5,11 +5,13 @@ import ru.ls.qa.school.addressbook.model.GroupData;
 
 public class GroupCreationTests extends TestBase {
 
+  private final GroupData group = new GroupData ("test1", "test2", "test3");
+
   @Test
   public void groupCreationTest() {
     app.getNavigationHelper().goToGroupPage();
     app.getGroupHelper().initGroupCreation();
-    app.getGroupHelper().fillGroupForm(new GroupData("test1", "test2", "test3"));
+    app.getGroupHelper().fillGroupForm(group);
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnToGroupPage();
   }
