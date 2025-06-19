@@ -15,7 +15,6 @@ public class TestBase {
 
   @AfterEach
   public void tearDown() {
-    app.sessionHelper.stop(app);
+    app.stop();
   }
-
 }
